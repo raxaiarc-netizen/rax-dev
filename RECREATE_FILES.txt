@@ -1,0 +1,13 @@
+Files being recreated:
+
+✅ Database (2 files)
+- db/schema.sql
+- db/migrations/001_initial.sql  
+
+⏳ Creating next batch...
+- app/lib/db/types.ts
+- app/lib/db/UserService.ts
+- app/lib/db/AuthService.ts
+- app/lib/db/CreditService.ts
+- app/lib/db/ChatService.ts
+- app/lib/db/AuditService.ts

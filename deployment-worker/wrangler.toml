@@ -1,0 +1,16 @@
+name = "bolt-deployment-worker"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# R2 Storage for deployment files
+[[r2_buckets]]
+bucket_name = "bolt-deployments"
+binding = "DEPLOYMENTS"
+
+# Environment variables
+[vars]
+# Set your API key using: wrangler secret put API_KEY
+
+# For development
+[env.dev]
+name = "bolt-deployment-worker-dev"

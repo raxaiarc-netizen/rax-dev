@@ -1,0 +1,15 @@
+# This file ensures the templates/ directory is tracked by Git
+# 
+# To use local templates:
+# 1. Create subdirectories matching template names from constants.ts
+# 2. Add your template files
+# 3. Set USE_LOCAL_TEMPLATES = true in app/utils/constants.ts
+#
+# Example structure:
+# templates/
+# ├── Vite React/
+# │   ├── package.json
+# │   ├── src/
+# │   └── ...
+# └── Vue/
+#     └── ...

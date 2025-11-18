@@ -1,0 +1,106 @@
+.rayContainer {
+  --ray-color-primary: rgba(50, 166, 255, 1);
+  --ray-color-secondary: rgba(46, 173, 255, 1);
+  --ray-color-accent: rgba(61, 131, 255, 1);
+
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  animation: fadeIn 1.2s ease-out;
+  
+  :global(html[data-theme='dark']) & {
+    mix-blend-mode: screen;
+  }
+}
+
+.lightRay {
+  position: absolute;
+  border-radius: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Letter R */
+.ray1 { 
+  width: 180px; height: 1100px; top: -680px; left: 12%; 
+  background: linear-gradient(to bottom, var(--ray-color-primary) 0%, rgba(50,166,255,0.5) 40%, transparent 100%);
+  filter: blur(45px);
+  opacity: 0.65;
+  animation: pulseBeam 8s ease-in-out infinite;
+}
+.ray2 { 
+  width: 150px; height: 600px; top: -240px; left: 14.5%; 
+  background: linear-gradient(to bottom, var(--ray-color-primary) 0%, rgba(50,166,255,0.4) 35%, transparent 100%);
+  transform: skewX(-20deg);
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: pulseBeam 8s ease-in-out infinite 0.5s;
+}
+
+/* Letter A */
+.ray3 { 
+  width: 165px; height: 1050px; top: -650px; left: 38.5%; 
+  background: linear-gradient(to bottom, var(--ray-color-secondary) 0%, rgba(46,173,255,0.5) 40%, transparent 100%);
+  transform: skewX(11deg);
+  filter: blur(45px);
+  opacity: 0.65;
+  animation: pulseBeam 8s ease-in-out infinite 1s;
+}
+.ray4 { 
+  width: 165px; height: 1050px; top: -650px; left: 47.5%; 
+  background: linear-gradient(to bottom, var(--ray-color-secondary) 0%, rgba(46,173,255,0.5) 40%, transparent 100%);
+  transform: skewX(-11deg);
+  filter: blur(45px);
+  opacity: 0.65;
+  animation: pulseBeam 8s ease-in-out infinite 1.5s;
+}
+.ray5 { 
+  width: 400px; height: 140px; top: -50px; left: 38%; 
+  background: linear-gradient(to bottom, rgba(46,173,255,0.8) 0%, rgba(46,173,255,0.4) 40%, transparent 100%);
+  filter: blur(35px);
+  opacity: 0.55;
+  animation: pulseBeam 8s ease-in-out infinite 2s;
+}
+
+/* Letter X */
+.ray6 { 
+  width: 175px; height: 1100px; top: -680px; left: 73.5%; 
+  background: linear-gradient(to bottom, var(--ray-color-accent) 0%, rgba(61,131,255,0.5) 40%, transparent 100%);
+  transform: skewX(-13deg);
+  filter: blur(45px);
+  opacity: 0.65;
+  animation: pulseBeam 8s ease-in-out infinite 2.5s;
+}
+.ray7 { 
+  width: 175px; height: 1100px; top: -680px; left: 78.5%; 
+  background: linear-gradient(to bottom, var(--ray-color-accent) 0%, rgba(61,131,255,0.5) 40%, transparent 100%);
+  transform: skewX(13deg);
+  filter: blur(45px);
+  opacity: 0.65;
+  animation: pulseBeam 8s ease-in-out infinite 3s;
+}
+
+/* Ambient glow */
+.ray8 { 
+  width: 1200px; height: 600px; top: -350px; left: 20%; 
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(50,166,255,0.2) 0%, rgba(46,173,255,0.15) 30%, transparent 70%);
+  filter: blur(120px);
+  opacity: 0.4;
+  animation: ambientGlow 12s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } 
+  to { opacity: 1; }
+}
+
+@keyframes pulseBeam {
+  0%, 100% { opacity: var(--base-opacity, 0.65); }
+  50% { opacity: calc(var(--base-opacity, 0.65) * 1.15); }
+}
+
+@keyframes ambientGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}

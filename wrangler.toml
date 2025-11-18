@@ -1,0 +1,48 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "bolt"
+compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2025-03-28"
+pages_build_output_dir = "./build/client"
+send_metrics = false
+
+# D1 Database for Authentication and User Data
+[[d1_databases]]
+binding = "DB"
+database_name = "rax-auth"
+database_id = "af7b19a5-d4f1-4c6e-9130-6ea0122ce96a"
+migrations_dir = "db/migrations"
+
+# KV Namespace for Auth Tokens and Rate Limiting
+[[kv_namespaces]]
+binding = "AUTH_KV"
+id = "8e21693091bb41d7b303b6e3144f9b80"
+preview_id = "516ad9c7673344d78391d26ec12b9734"
+
+# Deployment System KV Namespaces
+[[kv_namespaces]]
+binding = "DEPLOYMENT_KV"
+id = "a2a1d794dea14ba2b198f01c1774ae23"
+preview_id = "6730ca88ddd74e35bfedef8b9fe3769b"
+
+[[kv_namespaces]]
+binding = "BUILD_CACHE"
+id = "a0cd0195e7774b29971c017a56676bcf"
+preview_id = "f06592770b684ceeae009af400d5b751"
+
+# Deployment System R2 Bucket
+[[r2_buckets]]
+binding = "DEPLOYMENT_R2"
+bucket_name = "deployments"
+preview_bucket_name = "deployments-preview"
+
+# R2 Bucket for User Files and Chat Attachments
+[[r2_buckets]]
+binding = "USER_FILES_R2"
+bucket_name = "rax-user-files"
+preview_bucket_name = "rax-user-files-preview"
+
+# R2 Bucket for Project Files (Apps created by users)
+[[r2_buckets]]
+binding = "PROJECT_FILES"
+bucket_name = "rax-projects"
+preview_bucket_name = "rax-projects-preview"

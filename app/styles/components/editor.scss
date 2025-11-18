@@ -1,0 +1,135 @@
+:root {
+  --cm-backgroundColor: var(--rax-elements-editor-backgroundColor, var(--rax-elements-bg-depth-1));
+  --cm-textColor: var(--rax-elements-editor-textColor, var(--rax-elements-textPrimary));
+
+  /* Gutter */
+
+  --cm-gutter-backgroundColor: var(--rax-elements-editor-gutter-backgroundColor, var(--cm-backgroundColor));
+  --cm-gutter-textColor: var(--rax-elements-editor-gutter-textColor, var(--rax-elements-textSecondary));
+  --cm-gutter-activeLineTextColor: var(--rax-elements-editor-gutter-activeLineTextColor, var(--cm-gutter-textColor));
+
+  /* Fold Gutter */
+
+  --cm-foldGutter-textColor: var(--rax-elements-editor-foldGutter-textColor, var(--cm-gutter-textColor));
+  --cm-foldGutter-textColorHover: var(--rax-elements-editor-foldGutter-textColorHover, var(--cm-gutter-textColor));
+
+  /* Active Line */
+
+  --cm-activeLineBackgroundColor: var(--rax-elements-editor-activeLineBackgroundColor, rgb(224 231 235 / 30%));
+
+  /* Cursor */
+
+  --cm-cursor-width: 2px;
+  --cm-cursor-backgroundColor: var(--rax-elements-editor-cursorColor, var(--rax-elements-textSecondary));
+
+  /* Matching Brackets */
+
+  --cm-matching-bracket: var(--rax-elements-editor-matchingBracketBackgroundColor, rgb(50 140 130 / 0.3));
+
+  /* Selection */
+
+  --cm-selection-backgroundColorFocused: var(--rax-elements-editor-selection-backgroundColor, #42b4ff);
+  --cm-selection-backgroundOpacityFocused: var(--rax-elements-editor-selection-backgroundOpacity, 0.3);
+  --cm-selection-backgroundColorBlured: var(--rax-elements-editor-selection-inactiveBackgroundColor, #c9e9ff);
+  --cm-selection-backgroundOpacityBlured: var(--rax-elements-editor-selection-inactiveBackgroundOpacity, 0.3);
+
+  /* Panels */
+
+  --cm-panels-borderColor: var(--rax-elements-editor-panels-borderColor, var(--rax-elements-borderColor));
+
+  /* Search */
+
+  --cm-search-backgroundColor: var(--rax-elements-editor-search-backgroundColor, var(--cm-backgroundColor));
+  --cm-search-textColor: var(--rax-elements-editor-search-textColor, var(--rax-elements-textSecondary));
+  --cm-search-closeButton-backgroundColor: var(--rax-elements-editor-search-closeButton-backgroundColor, transparent);
+
+  --cm-search-closeButton-backgroundColorHover: var(
+    --rax-elements-editor-search-closeButton-backgroundColorHover,
+    var(--rax-elements-item-backgroundActive)
+  );
+
+  --cm-search-closeButton-textColor: var(
+    --rax-elements-editor-search-closeButton-textColor,
+    var(--rax-elements-item-contentDefault)
+  );
+
+  --cm-search-closeButton-textColorHover: var(
+    --rax-elements-editor-search-closeButton-textColorHover,
+    var(--rax-elements-item-contentActive)
+  );
+
+  --cm-search-button-backgroundColor: var(
+    --rax-elements-editor-search-button-backgroundColor,
+    var(--rax-elements-item-backgroundDefault)
+  );
+
+  --cm-search-button-backgroundColorHover: var(
+    --rax-elements-editor-search-button-backgroundColorHover,
+    var(--rax-elements-item-backgroundActive)
+  );
+
+  --cm-search-button-textColor: var(--rax-elements-editor-search-button-textColor, var(--rax-elements-textSecondary));
+
+  --cm-search-button-textColorHover: var(
+    --rax-elements-editor-search-button-textColorHover,
+    var(--rax-elements-textPrimary)
+  );
+
+  --cm-search-button-borderColor: var(--rax-elements-editor-search-button-borderColor, transparent);
+  --cm-search-button-borderColorHover: var(--rax-elements-editor-search-button-borderColorHover, transparent);
+
+  --cm-search-button-borderColorFocused: var(
+    --rax-elements-editor-search-button-borderColorFocused,
+    var(--rax-elements-borderColorActive)
+  );
+
+  --cm-search-input-backgroundColor: var(--rax-elements-editor-search-input-backgroundColor, transparent);
+  --cm-search-input-textColor: var(--rax-elements-editor-search-input-textColor, var(--rax-elements-textPrimary));
+  --cm-search-input-borderColor: var(--rax-elements-editor-search-input-borderColor, var(--rax-elements-borderColor));
+
+  --cm-search-input-borderColorFocused: var(
+    --rax-elements-editor-search-input-borderColorFocused,
+    var(--rax-elements-borderColorActive)
+  );
+
+  /* Tooltip */
+
+  --cm-tooltip-backgroundColor: var(--rax-elements-editor-tooltip-backgroundColor, var(--cm-backgroundColor));
+  --cm-tooltip-textColor: var(--rax-elements-editor-tooltip-textColor, var(--rax-elements-textPrimary));
+
+  --cm-tooltip-backgroundColorSelected: var(
+    --rax-elements-editor-tooltip-backgroundColorSelected,
+    theme('colors.alpha.accent.30')
+  );
+
+  --cm-tooltip-textColorSelected: var(
+    --rax-elements-editor-tooltip-textColorSelected,
+    var(--rax-elements-textPrimary)
+  );
+
+  --cm-tooltip-borderColor: var(--rax-elements-editor-tooltip-borderColor, var(--rax-elements-borderColor));
+
+  --cm-searchMatch-backgroundColor: var(--rax-elements-editor-searchMatch-backgroundColor, rgba(234, 92, 0, 0.33));
+}
+
+html[data-theme='light'] {
+  --rax-elements-editor-gutter-textColor: #237893;
+  --rax-elements-editor-gutter-activeLineTextColor: var(--rax-elements-textPrimary);
+  --rax-elements-editor-foldGutter-textColorHover: var(--rax-elements-textPrimary);
+  --rax-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 5%);
+  --rax-elements-editor-tooltip-backgroundColorSelected: theme('colors.alpha.accent.20');
+  --rax-elements-editor-search-button-backgroundColor: theme('colors.gray.100');
+  --rax-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.gray.10');
+}
+
+html[data-theme='dark'] {
+  --cm-backgroundColor: var(--rax-elements-bg-depth-2);
+  --rax-elements-editor-gutter-textColor: var(--rax-elements-textTertiary);
+  --rax-elements-editor-gutter-activeLineTextColor: var(--rax-elements-textSecondary);
+  --rax-elements-editor-selection-inactiveBackgroundOpacity: 0.3;
+  --rax-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 50%);
+  --rax-elements-editor-foldGutter-textColorHover: var(--rax-elements-textPrimary);
+  --rax-elements-editor-matchingBracketBackgroundColor: rgba(66, 180, 255, 0.3);
+  --rax-elements-editor-search-button-backgroundColor: theme('colors.gray.800');
+  --rax-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.white.10');
+}
